@@ -1,0 +1,240 @@
+header {
+  /* Set the header background image */
+  background-image: url("https://i.postimg.cc/Rh3cpdfk/temp-Image-CTq5-Ag.avif");
+  /* Stretch the image to cover the entire header */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:bottom left;
+  box-shadow: 0 0 40px white;
+  height: 70vh;
+  width: 100%;
+}
+
+body {
+  /* Set the background color and font of the page */
+  background-image: url("https://i.postimg.cc/htCVnNrk/temp-Imagek1tb-FV.avif");
+  background-size: 100%;
+  font-family: "Roboto Slab", serif;
+  color: white;
+  letter-spacing: 2px;
+  font-size: larger;
+  font-weight: lighter;
+  text-align: center;
+}
+h1 {
+  /* Set the style of a h1 header */
+  background-image: url('https://i.postimg.cc/3NVmpGy3/temp-Image-Vg-N44h.avif');
+  background-size: cover;
+  box-shadow: 0 0 20px black;
+  letter-spacing: 12px;
+  padding: 10px;
+  font-size: 230%;
+  border-radius: 5px;
+}
+h1:hover {
+  /* Set the style of a h1 header upon hovering */
+  font-weight: bold;
+  box-shadow: 0 0 55px white;
+}
+h2 {
+  /* Set the style of a h2 header */
+  border-radius: 5px;
+  font-family: 'Charmonman', cursive;
+  font-weight: bold;
+  font-size:300%;
+}
+
+h2:hover {
+  /* Set the style of a h2 header upon hovering */
+  text-shadow: 0 0 15px black;
+  text-decoration:underline;
+  font-size:302%;
+  letter-spacing: 12px;
+}
+h3 {
+  /* Set the style of a h3-h6 headers */
+  letter-spacing: 3px;
+  background-color: rgba(250, 250, 250, 0.3);
+  box-shadow: 0 0 20px black;
+  padding: 15px;
+  color: rgb(48, 48, 85);
+  font-size: larger;
+  border-radius: 5px;
+}
+
+h3:hover{
+  box-shadow: 0 0 45px white;
+  background-color: rgba(223, 226, 173, 0.9);
+}
+
+#experience li:hover,
+#connect li:hover, 
+#skills li:hover {
+  box-shadow: 0 0 45px white;
+}
+
+nav {
+  /* Set the style of a navigation menu */
+  display: flex;
+  justify-content: center;
+  letter-spacing: 3px;
+  border-radius: 5px;
+}
+
+nav a {
+  color: white; /* Added color for nav links */
+  font-size: large; /* Large font size*/
+  font-weight: bold;
+  text-decoration: none; /* Remove underline */
+  padding: 20px; /* Add padding */
+}
+
+nav a:hover {
+  /* Set the style of a navigation menu upon hovering */
+  background-color: rgba(250, 250, 250, 0.3);
+  color: black;
+  border-radius: 15px;
+  letter-spacing: 10px;
+  font-size: 150%;
+  padding: 10px;
+  box-shadow: 0 0 25px white;
+}
+
+#experience ul {
+  list-style: none;
+  padding: 0;
+  width: 98%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  font-size:large;
+  text-align: center;
+}
+
+#experience li {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px white;
+  border: 5px solid rgba(48, 48, 85, 0.7);
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items:center;
+  flex-direction:column;
+  justify-content: flex-start;
+}
+
+
+#experience li::before {
+  content: "";
+  background-size:cover;
+  background-position:center;
+  background-repeat: no-repeat;
+  width: 9em;
+  height: 3em;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display:inline-table;
+  border-radius: 30px;
+  box-shadow: 0 0 15px white;
+}
+  #experience li[data-icon="ctd"]::before {
+  background-image: url("https://i.postimg.cc/s22FfV4w/temp-Image-TPv-QGE.avif");
+  }
+  #experience li[data-icon="sdl"]::before {
+    background-image: url("https://i.postimg.cc/htsWqJTX/temp-Image-RTSI8-C.avif");
+  }
+  #experience li[data-icon="kodeploy"]::before {
+    background-image: url("https://i.postimg.cc/HkdDK0cG/temp-Image-MMo-Kpo.avif");
+  }
+  #experience li[data-icon="ccusa"]::before {
+    background-image: url("https://i.postimg.cc/JhYfG9Tm/temp-Imagewq1v-Q5.avif");
+    }
+  #experience li[data-icon="technomol"]::before {
+      background-image: url("https://i.postimg.cc/V6S3MDTt/temp-Imageqy-RGXE.avif");
+    }
+  #experience li[data-icon="msn"]::before {
+      background-image: url("https://i.postimg.cc/TwZBcnM4/temp-Imagefe-LM2-O.avif");
+    }
+
+#skills ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  font-size: larger;
+  text-align: center;
+}
+
+#skills li {
+  margin: 10px 0;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px white;
+  border: 5px solid rgba(48, 48, 85, 0.5);
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#connect ul {
+  list-style: none;
+  padding: 0;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  text-align: center;
+}
+#connect li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px black;
+  border: 5px solid rgba(48, 48, 85, 0.5);
+  position: relative;
+  background: rgba(250, 250, 250, 0.6);
+  letter-spacing: 3px;
+}
+#connect li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: small;
+  font-weight: bold;
+  text-decoration: none;
+}
+#connect li::before {
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3em;
+  height: 3em;
+
+}
+#connect li[data-icon="email"]::before {
+background-image: url("https://i.postimg.cc/P51dwFmw/4202011-email-gmail-mail-logo-social-icon.png");
+}
+#connect li[data-icon="github"]::before {
+  background-image: url("https://i.postimg.cc/bdXRSJhk/github-mark.png");
+}
+#connect li[data-icon="linkedin"]::before {
+  background-image: url("https://i.postimg.cc/J0HqhX9R/317750-linkedin-icon.png");
+}
