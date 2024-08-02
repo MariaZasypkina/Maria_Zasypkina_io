@@ -44,13 +44,6 @@ h2 {
   font-size:300%;
 }
 
-h2:hover {
-  /* Set the style of a h2 header upon hovering */
-  text-shadow: 0 0 15px black;
-  text-decoration:underline;
-  font-size:302%;
-  letter-spacing: 12px;
-}
 h3 {
   /* Set the style of a h3-h6 headers */
   letter-spacing: 3px;
