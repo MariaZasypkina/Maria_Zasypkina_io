@@ -6,7 +6,7 @@ header {
   background-repeat: no-repeat;
   background-position:bottom left;
   box-shadow: 0 0 40px white;
-  height: 70vh;
+  height: 70vh; /* Header will keep it's ratio */
   width: 100%;
 }
 
