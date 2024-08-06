@@ -2,6 +2,7 @@ header {
   /* Set the header background image */
   background-image: url("https://i.postimg.cc/Rh3cpdfk/temp-Image-CTq5-Ag.avif");
   /* Stretch the image to cover the entire header */
+  position: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position:bottom left;
