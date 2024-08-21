@@ -1,6 +1,9 @@
+let footer = document.createElement('footer');
+let body = document.querySelector('body');
+body.appendChild(footer);
+
 let today = new Date();
 let thisYear = today.getFullYear();
-let footer = document.querySelector('footer');
 let copyright = document.createElement("p");
 copyright.innerHTML = `\u00A9 Maria Zasypkina ${thisYear}`;
 footer.appendChild(copyright);
