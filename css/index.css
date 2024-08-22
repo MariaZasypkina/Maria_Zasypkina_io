@@ -1,30 +1,33 @@
-header {
-  /* Set the header background image */
-  background-image: url("https://i.postimg.cc/Rh3cpdfk/temp-Image-CTq5-Ag.avif");
-  /* Stretch the image to cover the entire header */
-  position: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:bottom left;
-  box-shadow: 0 0 40px white;
-  height: 70vh; /* Header will keep it's ratio */
-  width: 100%;
-}
+/* Desktop Styles */
 
 body {
   /* Set the background color and font of the page */
   background-image: url("https://i.postimg.cc/htCVnNrk/temp-Imagek1tb-FV.avif");
-  background-size: 100%;
+  background-size: cover;
   font-family: "Roboto Slab", serif;
   color: white;
   letter-spacing: 2px;
-  font-size: larger;
-  font-weight: lighter;
+  font-size: 18px;
+  font-weight: 600;
   text-align: center;
 }
+
+header {
+  /* Set the header background image */
+  background-image: url("https://i.postimg.cc/Rh3cpdfk/temp-Image-CTq5-Ag.avif");
+  /* Stretch the image to cover the entire header */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  box-shadow: 0 0 40px white;
+  height: 70vh; /* Header will keep it's ratio */
+  width: 100%;
+  padding-top: 60px;
+}
+
 h1 {
   /* Set the style of a h1 header */
-  background-image: url('https://i.postimg.cc/3NVmpGy3/temp-Image-Vg-N44h.avif');
+  background-image: url("https://i.postimg.cc/3NVmpGy3/temp-Image-Vg-N44h.avif");
   background-size: cover;
   box-shadow: 0 0 20px black;
   letter-spacing: 12px;
@@ -40,9 +43,9 @@ h1:hover {
 h2 {
   /* Set the style of a h2 header */
   border-radius: 5px;
-  font-family: 'Charmonman', cursive;
+  font-family: "Charmonman", cursive;
   font-weight: bold;
-  font-size:300%;
+  font-size: 300%;
 }
 
 h3 {
@@ -56,13 +59,13 @@ h3 {
   border-radius: 5px;
 }
 
-h3:hover{
+h3:hover {
   box-shadow: 0 0 45px white;
   background-color: rgba(223, 226, 173, 0.9);
 }
 
 #experience li:hover,
-#connect li:hover, 
+#connect li:hover,
 #skills li:hover {
   box-shadow: 0 0 45px white;
 }
@@ -70,9 +73,18 @@ h3:hover{
 nav {
   /* Set the style of a navigation menu */
   display: flex;
+  position: fixed;
   justify-content: center;
+  align-items: center;
+  background-image: url("https://i.postimg.cc/3NVmpGy3/temp-Image-Vg-N44h.avif");
+  background-size: cover;
+  text-align: center;
   letter-spacing: 3px;
-  border-radius: 5px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  box-shadow: 0 0 15px black;
+  z-index: 1000;
 }
 
 nav a {
@@ -94,6 +106,10 @@ nav a:hover {
   box-shadow: 0 0 25px white;
 }
 
+#about {
+  margin-top: 100px;
+}
+
 #experience ul {
   list-style: none;
   padding: 0;
@@ -102,7 +118,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  font-size:large;
+  font-size: large;
   text-align: center;
 }
 
@@ -115,44 +131,43 @@ nav a:hover {
   position: relative;
   background: rgba(0, 0, 0, 0.4);
   display: flex;
-  align-items:center;
-  flex-direction:column;
+  align-items: center;
+  flex-direction: column;
   justify-content: flex-start;
 }
 
-
 #experience li::before {
   content: "";
-  background-size:cover;
-  background-position:center;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   width: 9em;
   height: 3em;
   margin-right: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
-  display:inline-table;
+  display: inline-table;
   border-radius: 30px;
   box-shadow: 0 0 15px white;
 }
-  #experience li[data-icon="ctd"]::before {
+#experience li[data-icon="ctd"]::before {
   background-image: url("https://i.postimg.cc/s22FfV4w/temp-Image-TPv-QGE.avif");
-  }
-  #experience li[data-icon="sdl"]::before {
-    background-image: url("https://i.postimg.cc/htsWqJTX/temp-Image-RTSI8-C.avif");
-  }
-  #experience li[data-icon="kodeploy"]::before {
-    background-image: url("https://i.postimg.cc/HkdDK0cG/temp-Image-MMo-Kpo.avif");
-  }
-  #experience li[data-icon="ccusa"]::before {
-    background-image: url("https://i.postimg.cc/JhYfG9Tm/temp-Imagewq1v-Q5.avif");
-    }
-  #experience li[data-icon="technomol"]::before {
-      background-image: url("https://i.postimg.cc/V6S3MDTt/temp-Imageqy-RGXE.avif");
-    }
-  #experience li[data-icon="msn"]::before {
-      background-image: url("https://i.postimg.cc/TwZBcnM4/temp-Imagefe-LM2-O.avif");
-    }
+}
+#experience li[data-icon="sdl"]::before {
+  background-image: url("https://i.postimg.cc/htsWqJTX/temp-Image-RTSI8-C.avif");
+}
+#experience li[data-icon="kodeploy"]::before {
+  background-image: url("https://i.postimg.cc/HkdDK0cG/temp-Image-MMo-Kpo.avif");
+}
+#experience li[data-icon="ccusa"]::before {
+  background-image: url("https://i.postimg.cc/JhYfG9Tm/temp-Imagewq1v-Q5.avif");
+}
+#experience li[data-icon="technomol"]::before {
+  background-image: url("https://i.postimg.cc/V6S3MDTt/temp-Imageqy-RGXE.avif");
+}
+#experience li[data-icon="msn"]::before {
+  background-image: url("https://i.postimg.cc/TwZBcnM4/temp-Imagefe-LM2-O.avif");
+}
 
 #skills ul {
   list-style: none;
@@ -194,7 +209,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 10px 0;
   padding: 10px;
   border-radius: 15px;
@@ -203,6 +218,8 @@ nav a:hover {
   position: relative;
   background: rgba(250, 250, 250, 0.6);
   letter-spacing: 3px;
+
+
 }
 #connect li a {
   display: flex;
@@ -217,18 +234,147 @@ nav a:hover {
 }
 #connect li::before {
   content: "";
-  background-size: contain;
+  background-size:contain;
   background-repeat: no-repeat;
-  width: 3em;
-  height: 3em;
+}
 
+/* Tablet Styles */
+
+@media (min-width: 600px) and (max-width: 1200px) {
+
+  h1 {
+    background: none;
+    font-weight: normal;
+    font-size: 200%;
+    box-shadow: none;
+  }
+
+  h1:hover {
+    box-shadow: none;
+    font-weight: normal;
+  }
+
+  #skills ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    font-size: medium;
+  }
+
+  #connect li {
+    border:none;
+    background: rgba(250, 250, 250, 0.0);
+    box-shadow: none;
+  }
 }
-#connect li[data-icon="email"]::before {
-background-image: url("https://i.postimg.cc/P51dwFmw/4202011-email-gmail-mail-logo-social-icon.png");
+
+/* Mobile Styles */
+
+@media (max-width: 599px) {
+
+  header {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    box-shadow: 0 0 40px white;
+    height: 40vh; /* Header will keep it's ratio */
+    width: 100%;
+    padding-top: 100px;
+  }
+
+  #experience li:hover,
+  #connect li:hover,
+  #skills li:hover {
+    box-shadow:none;
+  }
+
+  nav {
+    flex-direction: column;
+    /*background-image: none;*/
+    background-color: transparent;
+    margin-top: 20px;
+  }
+
+  nav a {
+    padding: 10px;
+    font-size: x-small;
+  }
+
+  nav a:hover {
+    background-color: transparent;
+    color: white;
+    letter-spacing: normal;
+    font-size: 100%;
+    padding: 0%;
+    box-shadow: none;
+  }
+
+  h1 {
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    margin-top: 100px;
+    background-size: cover;
+    box-shadow: 0 0 20px black;
+    letter-spacing: 5px;
+    padding: 10px;
+    font-size: 130%;
+    border-radius: 0px;
+  }
+  h1:hover {
+    font-weight: normal;
+    box-shadow: 0 0 55px white;
+  }
+
+  h2 {
+    font-family: "Charmonman", cursive;
+    font-weight: normal;
+    font-size: 110%;
+  }
+
+  #experience ul {
+
+    margin: 0px auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size:small;
+  }
+
+  #skills ul {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    font-size: x-small;
+  }
+
+  #connect li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 0px;
+    overflow: hidden;
+    border:none;
+    background: rgba(250, 250, 250, 0.0);
+    box-shadow: none;
+  }
+  #connect li a {
+    font-size: 0;
+    line-height: 0;
+    padding: 0px;
+  }
+
+#connect li img {
+  width: 100%;
+  height: auto;
 }
-#connect li[data-icon="github"]::before {
-  background-image: url("https://i.postimg.cc/bdXRSJhk/github-mark.png");
-}
-#connect li[data-icon="linkedin"]::before {
-  background-image: url("https://i.postimg.cc/J0HqhX9R/317750-linkedin-icon.png");
+
+  #connect li::before {
+    background-size: contain;
+    background-position:right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
 }
