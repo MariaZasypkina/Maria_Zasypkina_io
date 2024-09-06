@@ -165,8 +165,7 @@ fetch(`https://api.github.com/users/${userName}/repos`)
 
   //Create a 'ul' list 
 
-  let projectList = document.createElement('ul');
-  projectSection.appendChild(projectList);
+  let projectList = projectSection.querySelector('ul');
 
   for(let repository of repositories) {
 
