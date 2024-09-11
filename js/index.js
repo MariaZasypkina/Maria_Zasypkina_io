@@ -13,6 +13,10 @@ let skills = [
   "HTML",
   "CSS",
   "GitHub",
+  "Postman",
+  "SQL",
+  "Xcode",
+  "Android Studio",
   "Adobe Photoshop",
   "Responsive Design",
   "Accessibility (a11y)",
@@ -21,6 +25,8 @@ let skills = [
   "Figma",
   "Canva",
   "Sketch",
+  "NodeJS",
+  "React",
 ];
 let skillsSection = document.getElementById("skills");
 let skillsList = skillsSection.querySelector("ul");
@@ -34,20 +40,20 @@ for (let i = 0; i < skills.length; i++) {
 
 let messageForm = document.querySelector("[name='leave_message']");
 let messageSection = document.getElementById("message-section");
-let messageList = messageSection.querySelector('ul');
+let messageList = messageSection.querySelector("ul");
 messageSection.hidden = true;
 
 let idCounter = 0;
 //make unic ids for entries
 function makeId() {
-  return 'entry' + idCounter++;
+  return "entry" + idCounter++;
 }
 
 //save entrie by id for initializing the edit form
-let entryById = {}; 
+let entryById = {};
 
 //Manage the new message list entries
-messageForm.addEventListener('submit', (event) => {
+messageForm.addEventListener("submit", (event) => {
   event.preventDefault();
   let name = event.target.usersName.value;
   let email = event.target.usersEmail.value;
@@ -57,86 +63,129 @@ messageForm.addEventListener('submit', (event) => {
   console.log("Email:", email);
   console.log("Message:", message);
   let uid = makeId();
-  let newMessage = document.createElement('li');
-  newMessage.classList.add('message-item');
+  let newMessage = document.createElement("li");
+  newMessage.classList.add("message-item");
 
   newMessage.innerHTML = `<a href="mailto:${email} ">${name} </a><span>wrote: ${message} </span>`;
-    newMessage.setAttribute('id', uid);
+  newMessage.setAttribute("id", uid);
 
-entryById[uid] = {usersName: name,
-                  usersEmail: email,
-                  usersMessage: message
-                };
-newMessage.appendChild(makeEditButton());
-newMessage.appendChild(makeRemoveButton());
+  entryById[uid] = {
+    usersName: name,
+    usersEmail: email,
+    usersMessage: message,
+  };
+  newMessage.appendChild(makeEditButton());
+  newMessage.appendChild(makeRemoveButton());
 
-messageList.appendChild(newMessage);
-messageForm.reset();
-messageSection.hidden = false;
+  messageList.appendChild(newMessage);
+  messageForm.reset();
+  messageSection.hidden = false;
 });
 
 //create a button Remove
 
-function makeRemoveButton(){
-    let removeButton = document.createElement('button');
-    removeButton.innerText = 'remove';
-    removeButton.type = 'button';
-    removeButton.className = 'remove-button';
-    removeButton.addEventListener('click', () => {
+function makeRemoveButton() {
+  let removeButton = document.createElement("button");
+  removeButton.innerText = "remove";
+  removeButton.type = "button";
+  removeButton.className = "remove-button";
+  removeButton.addEventListener("click", () => {
+    let entry = removeButton.parentNode;
 
-        let entry = removeButton.parentNode;
-        
-        let uid1 = entry.getAttribute('id');
-        delete entryById[uid1];
-        entry.remove();
-        if (messageList.childElementCount === 0) {
-            messageSection.hidden = true;
-        };
-    });
-    return removeButton;
-};
+    let uid1 = entry.getAttribute("id");
+    delete entryById[uid1];
+    entry.remove();
+    if (messageList.childElementCount === 0) {
+      messageSection.hidden = true;
+    }
+  });
+  return removeButton;
+}
 
 //create a button Edit
 
 function makeEditButton() {
-    let editButton = document.createElement('button');
-    editButton.innerText = 'edit';
-    editButton.type = 'button';
-    editButton.className = 'edit-button';
-    editButton.addEventListener('click', () => {
+  let editButton = document.createElement("button");
+  editButton.innerText = "edit";
+  editButton.type = "button";
+  editButton.className = "edit-button";
+  editButton.addEventListener("click", () => {
+    let entry = editButton.parentNode;
 
-        let entry = editButton.parentNode;
+    //Edit buttton is hidden while editing
+    let oldEditButton = entry.querySelector("button.edit-button");
+    oldEditButton.hidden = true;
 
-//Edit buttton is hidden while editing
-        let oldEditButton = entry.querySelector('button.edit-button');
-        oldEditButton.hidden = true;
+    //Remove buttton is hidden while editing
+    let oldRemoveButton = entry.querySelector("button.remove-button");
+    oldRemoveButton.hidden = true;
 
-//Remove buttton is hidden while editing
-let oldRemoveButton = entry.querySelector('button.remove-button');
-oldRemoveButton.hidden = true;        
-
-//get the id for the entry
-        let uid = entry.getAttribute('id');
-        let clonedForm = messageForm.cloneNode(true);
-        clonedForm.className = "edit-message-form";
-        clonedForm.usersName.value = entryById[uid].usersName;
-        clonedForm.usersEmail.value = entryById[uid].usersEmail;
-        clonedForm.usersMessage.value = entryById[uid].usersMessage;
-        entry.appendChild(clonedForm);
-        clonedForm.addEventListener('submit', function editMessage(event){
-            event.preventDefault();
-            entryById[uid].usersName = event.target.usersName.value;
-            entryById[uid].usersEmail = event.target.usersEmail.value;
-            entryById[uid].usersMessage = event.target.usersMessage.value;
-            let newEntry = document.createElement('li');
-            newEntry.classList.add('message-item');
-            newEntry.setAttribute('id', uid);
-            newEntry.innerHTML = `<a href="mailto:${entryById[uid].usersEmail} "> ${entryById[uid].usersName} </a><span>wrote: ${entryById[uid].usersMessage} </span>`;
-            newEntry.appendChild(makeEditButton());
-            newEntry.appendChild(makeRemoveButton());
-            entry.parentNode.replaceChild(newEntry, entry);
-        });
+    //get the id for the entry
+    let uid = entry.getAttribute("id");
+    let clonedForm = messageForm.cloneNode(true);
+    clonedForm.className = "edit-message-form";
+    clonedForm.usersName.value = entryById[uid].usersName;
+    clonedForm.usersEmail.value = entryById[uid].usersEmail;
+    clonedForm.usersMessage.value = entryById[uid].usersMessage;
+    entry.appendChild(clonedForm);
+    clonedForm.addEventListener("submit", function editMessage(event) {
+      event.preventDefault();
+      entryById[uid].usersName = event.target.usersName.value;
+      entryById[uid].usersEmail = event.target.usersEmail.value;
+      entryById[uid].usersMessage = event.target.usersMessage.value;
+      let newEntry = document.createElement("li");
+      newEntry.classList.add("message-item");
+      newEntry.setAttribute("id", uid);
+      newEntry.innerHTML = `<a href="mailto:${entryById[uid].usersEmail} "> ${entryById[uid].usersName} </a><span>wrote: ${entryById[uid].usersMessage} </span> <br><br>`;
+      newEntry.appendChild(makeEditButton());
+      newEntry.appendChild(makeRemoveButton());
+      entry.parentNode.replaceChild(newEntry, entry);
     });
-    return editButton;
-};
+  });
+  return editButton;
+}
 
+/*create a fetch to the gitHub repos*/
+let userName = 'MariaZasypkina';
+fetch(`https://api.github.com/users/${userName}/repos`)
+.then((Response) => {
+  if(Response.ok) {
+    return Response.text();
+  } else {
+    throw new Error('Failed to fetch repositories');
+  }
+})
+.then((data) => {
+  let repositories = JSON.parse(data);
+  console.log(repositories);
+  
+  //DOM Selection to select projects by id
+
+  let projectSection = document.getElementById('projects');
+
+  //Create a 'ul' list 
+
+  let projectList = projectSection.querySelector('ul');
+
+  for(let repository of repositories) {
+
+    //create 'li' element 
+
+    let project = document.createElement('li');
+
+    // set inner text of a variable as a repo's name property
+
+    project.innerText = repository.name;
+
+    // append the project element to the ProjectList
+
+    projectList.appendChild(project);
+  }
+})
+.catch((error) => {
+  if (error instanceof SyntaxError) {
+  console.error('Unparsable response from server');
+  } else {
+    console.error('Error fetching data: ', error.message);
+  }
+});
