@@ -23,6 +23,7 @@ header {
   height: 70vh; /* Header will keep it's ratio */
   width: 100%;
   padding-top: 60px;
+  position: relative;
 }
 
 h1 {
@@ -41,15 +42,7 @@ h1:hover {
   box-shadow: 0 0 55px white;
 }
 h2 {
-  /* Set the style of a h2 header */
-  border-radius: 5px;
-  font-family: "Charmonman", cursive;
-  font-weight: bold;
-  font-size: 300%;
-}
-
-h3 {
-  /* Set the style of a h3-h6 headers */
+  /* Set the style of  headers */
   letter-spacing: 3px;
   background-color: rgba(250, 250, 250, 0.3);
   box-shadow: 0 0 20px black;
@@ -59,15 +52,24 @@ h3 {
   border-radius: 5px;
 }
 
-h3:hover {
+h2:hover {
   box-shadow: 0 0 45px white;
   background-color: rgba(223, 226, 173, 0.9);
 }
 
 #experience li:hover,
 #connect li:hover,
-#skills li:hover {
+#skills li:hover, 
+#toggleGrayMode:hover {
   box-shadow: 0 0 45px white;
+}
+
+h3 {
+  /* Set the style of a h3 header */
+  border-radius: 5px;
+  font-family: "Charmonman", cursive;
+  font-weight: bold;
+  font-size: 300%;
 }
 
 h4 {
@@ -201,6 +203,44 @@ height: auto;
   background-image: url("https://i.postimg.cc/TwZBcnM4/temp-Imagefe-LM2-O.avif");
 }
 
+#projects ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px white;
+  border: 5px solid rgba(48, 48, 85, 0.7);
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: small;
+}
+
+#projects li {
+ align-items: center; 
+ margin: 10px;
+padding-left: 10px;
+padding-right: 10px;
+ padding-bottom: 25px;
+ border-radius: 15px;
+}
+
+#projects li:hover {
+  background: rgba(42, 40, 40, 0.6);
+}
+
+#projects li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+
+  text-decoration: none; 
+}
+
 #skills ul {
   list-style: none;
   padding: 0;
@@ -311,6 +351,35 @@ button[type="button"] {
   border: 5px solid rgba(250, 250, 250, 0.3);
 }
 
+#toggleGrayMode {
+  background: transparent;
+  background-color: rgba(250, 250, 250, 0.5);
+  position: absolute;
+  right: 0;
+  top: 8%;
+  height: 80px;
+  width: 80px;
+  z-index: 1000;
+  margin: 15px;
+  padding: 5px;
+  border-radius: 400px;
+  box-shadow: 0 0 25px black;
+  border: 5px solid rgba(250, 250, 250, 0.3);
+}
+
+
+/* css gray mode */
+.gray-mode {
+  background-image: none;
+  filter: grayscale(100%);
+  color: black;
+  #connect li a {
+    color: black; 
+  }
+  #toggleGrayMode {
+    box-shadow: 0 0 15px black;
+  }
+}
 
 /* Tablet Styles */
 
@@ -361,18 +430,27 @@ button[type="button"] {
     box-shadow:none;
   }
 
+  #toggleGrayMode {
+    right: 0;
+    margin: 15px;
+    padding: 5px;
+    box-shadow: 0 0 25px black;
+    border: 5px solid rgba(250, 250, 250, 0.3);
+  }
+
   nav {
     flex-direction: column;
     /*background-image: none;*/
     background-color: transparent;
-
+    width: 50%;
+    border-radius: 40px;
     margin-top: 20px;
   }
 
   nav a {
     padding: 10px;
     font-size: x-small;
-    width: (100% - 1px);
+    width: (40%);
   }
 
   nav a:hover {
@@ -402,7 +480,7 @@ button[type="button"] {
     box-shadow: 0 0 55px white;
   }
 
-  h2 {
+  h3 {
     font-family: "Charmonman", cursive;
     font-weight: normal;
     font-size: 110%;
@@ -426,6 +504,11 @@ button[type="button"] {
     gap: 5px;
     font-size:small;
     justify-content: space-evenly;
+  }
+
+  #projects ul {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   #skills ul {

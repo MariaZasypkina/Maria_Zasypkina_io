@@ -159,6 +159,10 @@ fetch(`https://api.github.com/users/${userName}/repos`)
   let repositories = JSON.parse(data);
   console.log(repositories);
   
+  //Sort repositories by creation date
+
+  repositories.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
+
   //DOM Selection to select projects by id
 
   let projectSection = document.getElementById('projects');
@@ -173,9 +177,25 @@ fetch(`https://api.github.com/users/${userName}/repos`)
 
     let project = document.createElement('li');
 
-    // set inner text of a variable as a repo's name property
+    //create anchor element for the repo link
 
-    project.innerText = repository.name;
+    let projectLink = document.createElement('a');
+    projectLink.href = repository.html_url; // url of GitHub repo
+
+    // set inner text of a variable as a repo's name property
+    projectLink.innerText = repository.name;
+
+    //open link in a new tap
+    projectLink.target = '_blank';
+
+    //Convert to a readeble format
+    let createdAt = new Date(repository.created_at);
+    let formattedDate = createdAt.toLocaleDateString();
+
+    //appent the project link and creation date
+
+    project.appendChild(projectLink);
+    project.innerHTML += ` created on: ${formattedDate}`
 
     // append the project element to the ProjectList
 
@@ -189,3 +209,24 @@ fetch(`https://api.github.com/users/${userName}/repos`)
     console.error('Error fetching data: ', error.message);
   }
 });
+
+//Switching color themes
+
+let toggleButton = document.getElementById('toggleGrayMode');
+
+let isGrayMode = false; //saving current state of gray mode
+toggleButton.addEventListener('click', () => {
+  //toggle the state
+  isGrayMode = !isGrayMode;
+
+  //enable or disable gray mode
+  if(isGrayMode) {
+    document.body.classList.add('gray-mode');
+    toggleButton.textContent = 'Add Color'; //changing the button text
+  } else {
+    document.body.classList.remove('gray-mode');
+    toggleButton.textContent = 'No Color' //changing the button text
+  }
+});
+
+
