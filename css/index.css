@@ -203,6 +203,33 @@ height: auto;
   background-image: url("https://i.postimg.cc/TwZBcnM4/temp-Imagefe-LM2-O.avif");
 }
 
+
+#skills ul {
+  list-style: none;
+  padding: 0;
+  width: 98%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  font-size: larger;
+  text-align: center;
+}
+
+#skills li {
+  margin: 10px 0;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px white;
+  border: 5px solid rgba(48, 48, 85, 0.5);
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
 #projects ul {
   list-style: none;
   display: grid;
@@ -218,6 +245,7 @@ height: auto;
 }
 
 #projects li {
+  overflow-wrap:anywhere;
  align-items: center; 
  margin: 10px;
 padding-left: 10px;
@@ -239,32 +267,6 @@ padding-right: 10px;
   color: white;
 
   text-decoration: none; 
-}
-
-#skills ul {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 10px;
-  font-size: larger;
-  text-align: center;
-}
-
-#skills li {
-  margin: 10px 0;
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 0 20px white;
-  border: 5px solid rgba(48, 48, 85, 0.5);
-  position: relative;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-content: center;
-  flex-direction: row;
-  justify-content: center;
 }
 
 #connect ul {
@@ -397,6 +399,10 @@ button[type="button"] {
     font-weight: normal;
   }
 
+  #experience ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
   #skills ul {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
@@ -413,7 +419,7 @@ button[type="button"] {
 /* Mobile Styles */
 
 @media (max-width: 599px) {
-
+  
   header {
     background-size: 100%;
     background-repeat: no-repeat;
@@ -463,7 +469,7 @@ button[type="button"] {
   }
 
   h1 {
-    width:100%;
+    width:96%;
     justify-content: center;
     align-items: center;
     background-image: none;
@@ -498,9 +504,8 @@ button[type="button"] {
   }  
 
   #experience ul {
-
     margin: 0px 0px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 5px;
     font-size:small;
     justify-content: space-evenly;
@@ -509,13 +514,19 @@ button[type="button"] {
   #projects ul {
     display: grid;
     grid-template-columns: 1fr;
+    font-size: medium;
   }
 
   #skills ul {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 5px;
-    font-size: x-small;
-    justify-content: center;
+    font-size: small;
+    justify-content: space-evenly;
+  }
+
+  #skills li {
+    padding: 3px;
+    margin: 3px;
   }
 
   #connect li {
@@ -546,10 +557,10 @@ button[type="button"] {
     background-size: contain;
     background-position:right;
     background-repeat: no-repeat;
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
   }
-
+ 
   h4 {
     font-size: x-small;
     margin: 0;
@@ -572,4 +583,3 @@ button[type="button"] {
     font-size: xx-small;
   }
 }
-
