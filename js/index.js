@@ -146,87 +146,86 @@ function makeEditButton() {
 }
 
 /*create a fetch to the gitHub repos*/
-let userName = 'MariaZasypkina';
+let userName = "MariaZasypkina";
 fetch(`https://api.github.com/users/${userName}/repos`)
-.then((Response) => {
-  if(Response.ok) {
-    return Response.text();
-  } else {
-    throw new Error('Failed to fetch repositories');
-  }
-})
-.then((data) => {
-  let repositories = JSON.parse(data);
-  console.log(repositories);
-  
-  //Sort repositories by creation date
+  .then((Response) => {
+    if (Response.ok) {
+      return Response.text();
+    } else {
+      throw new Error("Failed to fetch repositories");
+    }
+  })
+  .then((data) => {
+    let repositories = JSON.parse(data);
+    console.log(repositories);
 
-  repositories.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
+    //Sort repositories by creation date
 
-  //DOM Selection to select projects by id
+    repositories.sort(
+      (a, b) => new Date(b.created_at) - new Date(a.created_at)
+    );
 
-  let projectSection = document.getElementById('projects');
+    //DOM Selection to select projects by id
 
-  //Create a 'ul' list 
+    let projectSection = document.getElementById("projects");
 
-  let projectList = projectSection.querySelector('ul');
-  
-  for(let repository of repositories) {
+    //Create a 'ul' list
 
-    //create 'li' element 
+    let projectList = projectSection.querySelector("ul");
 
-    let project = document.createElement('li');
+    for (let repository of repositories) {
+      //create 'li' element
 
-    //create anchor element for the repo link
+      let project = document.createElement("li");
 
-    let projectLink = document.createElement('a');
-    projectLink.href = repository.html_url; // url of GitHub repo
+      //create anchor element for the repo link
 
-    // set inner text of a variable as a repo's name property
-    projectLink.innerText = repository.name;
+      let projectLink = document.createElement("a");
+      projectLink.href = repository.html_url; // url of GitHub repo
 
-    //open link in a new tap
-    projectLink.target = '_blank';
+      // set inner text of a variable as a repo's name property
+      projectLink.innerText = repository.name;
 
-    //Convert to a readeble format
-    let createdAt = new Date(repository.created_at);
-    let formattedDate = createdAt.toLocaleDateString();
+      //open link in a new tap
+      projectLink.target = "_blank";
 
-    //appent the project link and creation date
+      //Convert to a readeble format
+      let createdAt = new Date(repository.created_at);
+      let formattedDate = createdAt.toLocaleDateString();
 
-    project.appendChild(projectLink);
-    project.innerHTML += ` created on: ${formattedDate}`
+      //appent the project link and creation date
 
-    // append the project element to the ProjectList
+      project.appendChild(projectLink);
+      project.innerHTML += ` created on: ${formattedDate}`;
 
-    projectList.appendChild(project);
-  }
-})
-.catch((error) => {
-  if (error instanceof SyntaxError) {
-  console.error('Unparsable response from server');
-  } else {
-    console.error('Error fetching data: ', error.message);
-  }
-});
+      // append the project element to the ProjectList
+
+      projectList.appendChild(project);
+    }
+  })
+  .catch((error) => {
+    if (error instanceof SyntaxError) {
+      console.error("Unparsable response from server");
+    } else {
+      console.error("Error fetching data: ", error.message);
+    }
+  });
 
 //Switching color themes
 
-let toggleButton = document.getElementById('toggleGrayMode');
+let toggleButton = document.getElementById("toggleGrayMode");
 
 let isGrayMode = false; //saving current state of gray mode
-toggleButton.addEventListener('click', () => {
+toggleButton.addEventListener("click", () => {
   //toggle the state
   isGrayMode = !isGrayMode;
 
   //enable or disable gray mode
-  if(isGrayMode) {
-    document.body.classList.add('gray-mode');
-    toggleButton.textContent = 'Add Color'; //changing the button text
+  if (isGrayMode) {
+    document.body.classList.add("gray-mode");
+    toggleButton.textContent = "Add Color"; //changing the button text
   } else {
-    document.body.classList.remove('gray-mode');
-    toggleButton.textContent = 'No Color' //changing the button text
+    document.body.classList.remove("gray-mode");
+    toggleButton.textContent = "No Color"; //changing the button text
   }
 });
-
-

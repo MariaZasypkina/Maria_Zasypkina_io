@@ -59,7 +59,7 @@ h2:hover {
 
 #experience li:hover,
 #connect li:hover,
-#skills li:hover, 
+#skills li:hover,
 #toggleGrayMode:hover {
   box-shadow: 0 0 45px white;
 }
@@ -76,7 +76,7 @@ h4 {
   font-family: "Roboto Slab", serif;
   letter-spacing: 3px;
   color: rgba(48, 48, 85, 0.9);
-  font-size:x-large;
+  font-size: x-large;
 }
 
 nav {
@@ -120,10 +120,10 @@ nav a:hover {
 }
 
 .about-content {
-display: grid;
-grid-template-columns: 4fr 1fr;
-align-items: center;
-height: auto;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  align-items: center;
+  height: auto;
 }
 
 .about-text {
@@ -141,7 +141,6 @@ height: auto;
   width: 100%;
   height: 100%;
   object-fit: contain;
-
 }
 
 #experience ul {
@@ -203,7 +202,6 @@ height: auto;
   background-image: url("https://i.postimg.cc/TwZBcnM4/temp-Imagefe-LM2-O.avif");
 }
 
-
 #skills ul {
   list-style: none;
   padding: 0;
@@ -245,13 +243,13 @@ height: auto;
 }
 
 #projects li {
-  overflow-wrap:anywhere;
- align-items: center; 
- margin: 10px;
-padding-left: 10px;
-padding-right: 10px;
- padding-bottom: 25px;
- border-radius: 15px;
+  overflow-wrap: anywhere;
+  align-items: center;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+  border-radius: 15px;
 }
 
 #projects li:hover {
@@ -266,7 +264,7 @@ padding-right: 10px;
   height: 100%;
   color: white;
 
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 #connect ul {
@@ -292,8 +290,6 @@ padding-right: 10px;
   position: relative;
   background: rgba(250, 250, 250, 0.6);
   letter-spacing: 3px;
-
-
 }
 #connect li a {
   display: flex;
@@ -308,7 +304,7 @@ padding-right: 10px;
 }
 #connect li::before {
   content: "";
-  background-size:contain;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -321,7 +317,7 @@ textarea {
   box-shadow: 0 0 25px black;
   border: 5px solid rgba(250, 250, 250, 0.3);
   height: 100%;
-  width: 50%;  
+  width: 50%;
 }
 
 input[type="text"]:hover,
@@ -369,14 +365,13 @@ button[type="button"] {
   border: 5px solid rgba(250, 250, 250, 0.3);
 }
 
-
 /* css gray mode */
 .gray-mode {
   background-image: none;
   filter: grayscale(100%);
   color: black;
   #connect li a {
-    color: black; 
+    color: black;
   }
   #toggleGrayMode {
     box-shadow: 0 0 15px black;
@@ -386,7 +381,6 @@ button[type="button"] {
 /* Tablet Styles */
 
 @media (min-width: 600px) and (max-width: 1200px) {
-
   h1 {
     background: none;
     font-weight: normal;
@@ -410,8 +404,8 @@ button[type="button"] {
   }
 
   #connect li {
-    border:none;
-    background: rgba(250, 250, 250, 0.0);
+    border: none;
+    background: rgba(250, 250, 250, 0);
     box-shadow: none;
   }
 }
@@ -419,7 +413,6 @@ button[type="button"] {
 /* Mobile Styles */
 
 @media (max-width: 599px) {
-  
   header {
     background-size: 100%;
     background-repeat: no-repeat;
@@ -433,7 +426,7 @@ button[type="button"] {
   #experience li:hover,
   #connect li:hover,
   #skills li:hover {
-    box-shadow:none;
+    box-shadow: none;
   }
 
   #toggleGrayMode {
@@ -469,7 +462,7 @@ button[type="button"] {
   }
 
   h1 {
-    width:96%;
+    width: 96%;
     justify-content: center;
     align-items: center;
     background-image: none;
@@ -494,20 +487,20 @@ button[type="button"] {
   .about-content {
     display: inline;
     align-items: center;
-    }  
+  }
 
   .about-text {
-      padding-right: 0px;
-    }  
+    padding-right: 0px;
+  }
   .about-photo {
     height: 250px;
-  }  
+  }
 
   #experience ul {
     margin: 0px 0px;
     grid-template-columns: 1fr;
     gap: 5px;
-    font-size:small;
+    font-size: small;
     justify-content: space-evenly;
   }
 
@@ -538,8 +531,8 @@ button[type="button"] {
     margin: 10px;
     padding: 0px;
     overflow: hidden;
-    border:none;
-    background: rgba(250, 250, 250, 0.0);
+    border: none;
+    background: rgba(250, 250, 250, 0);
     box-shadow: none;
   }
   #connect li a {
@@ -548,19 +541,19 @@ button[type="button"] {
     padding: 0px;
   }
 
-#connect li img {
-  width: 100%;
-  height: auto;
-}
+  #connect li img {
+    width: 100%;
+    height: auto;
+  }
 
   #connect li::before {
     background-size: contain;
-    background-position:right;
+    background-position: right;
     background-repeat: no-repeat;
     width: 30%;
     height: 30%;
   }
- 
+
   h4 {
     font-size: x-small;
     margin: 0;
